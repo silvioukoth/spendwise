@@ -252,9 +252,11 @@ Add your desktop dashboard screenshot here:
 
 Add your DevTools mobile screenshot here:
 
-![
-    
-](image-1.png)
+!(image-1.png)
+
+![alt text](image-1.png)
+
+
 
 ```markdown
 ![SpendWise Mobile Dashboard](screenshots/mobile.png)
