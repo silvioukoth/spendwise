@@ -5,7 +5,7 @@
 
 
 /* =========================================
-   1. CSS CUSTOM PROPERTIES
+   1. THEME VARIABLES
 ========================================= */
 
 :root {
@@ -22,10 +22,6 @@
 
     --border: #e5e7eb;
 
-    --success: #16a34a;
-    --warning: #f59e0b;
-    --danger: #dc2626;
-
     --sidebar-width: 250px;
 
     --shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
@@ -35,7 +31,7 @@
 
 
 /* =========================================
-   RESET
+   2. RESET
 ========================================= */
 
 * {
@@ -52,6 +48,7 @@ html {
 
 body {
     min-height: 100%;
+
     font-family: Arial, Helvetica, sans-serif;
 
     background: var(--background);
@@ -63,12 +60,13 @@ body {
 
 
 /* =========================================
-   2. MAIN DASHBOARD LAYOUT
+   3. MAIN DASHBOARD
    CSS GRID
 ========================================= */
 
 .dashboard {
     width: 100%;
+
     height: 100vh;
 
     display: grid;
@@ -80,7 +78,7 @@ body {
 
 
 /* =========================================
-   SIDEBAR
+   4. SIDEBAR
    FLEXBOX
 ========================================= */
 
@@ -123,6 +121,7 @@ body {
 
 .logo-icon {
     width: 38px;
+
     height: 38px;
 
     background: var(--brand);
@@ -195,6 +194,7 @@ body {
 
 /* =========================================
    SIDEBAR BUDGET
+   FLEXBOX
 ========================================= */
 
 .sidebar-footer {
@@ -256,7 +256,7 @@ body {
 
 
 /* =========================================
-   MAIN CONTENT
+   5. MAIN CONTENT
 ========================================= */
 
 .main-content {
@@ -273,7 +273,7 @@ body {
 
 
 /* =========================================
-   HEADER / TOPBAR
+   6. HEADER
    FLEXBOX
 ========================================= */
 
@@ -301,6 +301,10 @@ body {
     z-index: 1000;
 }
 
+
+/* =========================================
+   HEADER TITLE
+========================================= */
 
 .header-title {
     display: flex;
@@ -341,6 +345,7 @@ body {
 
 .notification {
     width: 40px;
+
     height: 40px;
 
     border: 1px solid var(--border);
@@ -401,6 +406,7 @@ body {
 
 .avatar {
     width: 42px;
+
     height: 42px;
 
     border-radius: 50%;
@@ -420,7 +426,7 @@ body {
 
 
 /* =========================================
-   DASHBOARD CONTENT
+   7. DASHBOARD CONTENT
 ========================================= */
 
 .dashboard-content {
@@ -437,7 +443,7 @@ body {
 
 
 /* =========================================
-   SUMMARY
+   8. SUMMARY
    FLEXBOX
 ========================================= */
 
@@ -480,7 +486,7 @@ body {
 
 
 /* =========================================
-   SECTION HEADING
+   9. SECTION HEADING
    FLEXBOX
 ========================================= */
 
@@ -548,7 +554,7 @@ body {
 
 
 /* =========================================
-   3. CATEGORY CARDS
+   10. CATEGORY GRID
    CSS GRID
 ========================================= */
 
@@ -563,7 +569,7 @@ body {
 
 
 /* =========================================
-   CARD
+   11. CATEGORY CARDS
    FLEXBOX
 ========================================= */
 
@@ -586,11 +592,6 @@ body {
 
     cursor: pointer;
 
-
-    /* Required transition:
-       250ms or less
-    */
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
@@ -598,7 +599,7 @@ body {
 
 
 /* =========================================
-   4. HOVER + KEYBOARD FOCUS
+   12. CARD HOVER + FOCUS
 ========================================= */
 
 .category-card:hover,
@@ -637,6 +638,7 @@ body {
 
 .category-icon {
     width: 48px;
+
     height: 48px;
 
     background: #eff6ff;
@@ -671,7 +673,7 @@ body {
 
 
 /* =========================================
-   CARD INFORMATION
+   CARD INFO
    FLEXBOX
 ========================================= */
 
@@ -749,109 +751,13 @@ body {
 
 
 /* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-    background: var(--brand);
-
-    color: white;
-
-    padding: 30px 32px 20px;
-
-    flex-shrink: 0;
-}
-
-
-.footer-content {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-
-.footer strong {
-    font-size: 20px;
-}
-
-
-.footer p {
-    margin-top: 5px;
-
-    font-size: 13px;
-
-    opacity: 0.9;
-}
-
-
-.footer-links {
-    display: flex;
-
-    align-items: center;
-
-    gap: 24px;
-}
-
-
-.footer-links a {
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    transition:
-        opacity var(--transition),
-        transform var(--transition);
-}
-
-
-.footer-links a:hover {
-    opacity: 0.75;
-
-    transform: translateY(-2px);
-}
-
-
-.footer-links a:focus {
-    outline: 2px solid white;
-
-    outline-offset: 4px;
-}
-
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-
-    margin-top: 25px;
-
-    padding-top: 15px;
-
-    text-align: center;
-}
-
-
-.footer-bottom p {
-    margin: 0;
-
-    font-size: 12px;
-}
-
-
-/* =========================================
-   5. RESPONSIVE DESIGN
-   Below 768px
+   13. RESPONSIVE DESIGN
+   BELOW 768px
 ========================================= */
 
 @media (max-width: 768px) {
 
-    /* Required:
-       Collapse dashboard into one column
-    */
+    /* Single-column dashboard */
 
     .dashboard {
         height: auto;
@@ -879,14 +785,7 @@ body {
     }
 
 
-    /* Logo */
-
-    .logo {
-        margin-bottom: 18px;
-    }
-
-
-    /* Navigation */
+    /* Navigation becomes horizontal */
 
     .navigation {
         flex-direction: row;
@@ -902,14 +801,14 @@ body {
     }
 
 
-    /* Hide monthly budget on small screens */
+    /* Hide budget box on small screens */
 
     .sidebar-footer {
         display: none;
     }
 
 
-    /* Main */
+    /* Main content */
 
     .main-content {
         height: auto;
@@ -959,7 +858,7 @@ body {
     }
 
 
-    /* Summary */
+    /* Summary becomes one column */
 
     .summary {
         flex-direction: column;
@@ -968,7 +867,7 @@ body {
     }
 
 
-    /* Category grid */
+    /* Category cards become one column */
 
     .category-grid {
         grid-template-columns: 1fr;
@@ -986,38 +885,12 @@ body {
 
         gap: 12px;
     }
-
-
-    /* Footer */
-
-    .footer {
-        padding: 25px 20px 18px;
-    }
-
-
-    .footer-content {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 20px;
-    }
-
-
-    .footer-links {
-        gap: 18px;
-    }
-
-
-    .footer-bottom {
-        text-align: left;
-    }
 }
 
 
 /* =========================================
-   6. DARK THEME
-   Stretch Goal
+   14. DARK THEME
+   STRETCH GOAL
 ========================================= */
 
 @media (prefers-color-scheme: dark) {
@@ -1038,21 +911,12 @@ body {
         --secondary-text: #94a3b8;
 
         --border: #1f2937;
-
-        --success: #22c55e;
-
-        --warning: #f59e0b;
-
-        --danger: #ef4444;
-
-        --shadow:
-            0 8px 25px rgba(0, 0, 0, 0.35);
     }
 }
 
 
 /* =========================================
-   7. VERY SMALL SCREENS
+   15. SMALL PHONES
 ========================================= */
 
 @media (max-width: 480px) {
@@ -1086,10 +950,5 @@ body {
         min-height: 200px;
 
         padding: 18px;
-    }
-
-
-    .footer {
-        padding: 22px 15px 16px;
     }
 }
